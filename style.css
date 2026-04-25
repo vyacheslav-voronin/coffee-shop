@@ -1,0 +1,327 @@
+/* 1. Сброс стандартных отступов и полей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Задаем основные параметры для всей страницы */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #2c2c2c; /* Тёмно-серый для текста */
+    background-color: #f8f5f0; /* Светло-бежевый фон */
+}
+
+/* 3. Стили для контейнера, который будет центрировать содержимое */
+.container {
+    max-width: 1200px; /* Максимальная ширина контента */
+    margin: 0 auto; /* Автоматические отступы слева/справа центрируют блок */
+    padding: 0 20px; /* Отступы слева/справа, чтобы на телефоне текст не прилипал к краям */
+}
+
+/* 4. Общие стили для всех ссылок */
+a {
+    color: #c17a4a; /* Коричнево-оранжевый акцентный цвет */
+    text-decoration: none; /* Убираем стандартное подчёркивание */
+}
+
+/* Десктопная сетка меню (2 колонки на больших экранах) */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+a:hover {
+    text-decoration: underline; /* Подчёркивание при наведении */
+}
+/* 5. Стили для шапки сайта */
+.header {
+    background-color: #ffffff; /* Белый фон для шапки */
+    padding: 20px 0; /* Отступы сверху и снизу внутри шапки */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Лёгкая тень снизу для эффекта "отрыва" от фона */
+}
+
+/* 6. Внутренний блок шапки, который делает лого и меню в одну строку */
+.header .container {
+    display: flex; /* Включаем Flexbox - макет "гибких коробок" */
+    justify-content: space-between; /* Распределяем пространство: лого к левому краю, меню к правому */
+    align-items: center; /* Выравниваем лого и меню по вертикали по центру */
+}
+
+/* 7. Стили для логотипа */
+.logo {
+    font-size: 28px; /* Размер шрифта */
+    font-weight: bold; /* Жирное начертание */
+    color: #c17a4a; /* Акцентный цвет */
+}
+
+/* 8. Стили для навигационного меню */
+.nav-list {
+    display: flex; /* Делаем список не вертикальным, а горизонтальным */
+    list-style: none; /* Убираем точки у списка */
+    gap: 30px; /* Расстояние между пунктами меню */
+}
+
+.nav-list a {
+    font-weight: bold; /* Жирный шрифт у ссылок */
+    font-size: 18px; /* Размер шрифта */
+}
+/* 9. Стили для главной секции (герой) */
+.hero {
+    background-color: #c17a4a; /* Акцентный цвет фона */
+    color: #ffffff; /* Белый текст на тёмном фоне */
+    text-align: center; /* Выравниваем текст по центру */
+    padding: 100px 0; /* Большие отступы сверху и снину, чтобы секция была высокой */
+}
+
+/* 10. Стили для заголовка в герое */
+.hero-title {
+    font-size: 48px; /* Очень большой шрифт */
+    margin-bottom: 20px; /* Отступ снизу, чтобы отделить от подзаголовка */
+    line-height: 1.2; /* Межстрочный интервал для заголовка */
+}
+
+/* 11. Стили для подзаголовка в герое */
+.hero-subtitle {
+    font-size: 24px; /* Крупный, но меньше заголовка */
+    margin-bottom: 40px; /* Отступ снизу, перед кнопкой */
+    opacity: 0.9; /* Лёгкая полупрозрачность для изящества */
+}
+
+/* 12. Стили для кнопки */
+.btn {
+    display: inline-block; /* Чтобы кнопке можно было задать padding и она вела себя как блок */
+    background-color: #ffffff; /* Белый фон кнопки */
+    color: #c17a4a; /* Акцентный цвет текста на кнопке */
+    padding: 15px 40px; /* Внутренние отступы: 15px сверху/снизу, 40px слева/справа */
+    border-radius: 30px; /* Закругляем углы, делая "капсулу" */
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none; /* Убираем подчёркивание у ссылки */
+    transition: all 0.3s ease; /* Плавный переход для всех изменений стиля (например, при наведении) */
+}
+
+/* 13. Стили для кнопки при наведении */
+.btn:hover {
+    background-color: #2c2c2c; /* Меняем фон кнопки на тёмный при наведении */
+    color: #ffffff; /* Меняем цвет текста на белый */
+    text-decoration: none; /* Убеждаемся, что подчёркивания нет */
+    transform: translateY(-3px); /* Лёгкий эффект "подпрыгивания" кнопки вверх */
+}
+/* 14. Общие стили для всех секций (кроме героя) */
+section {
+    padding: 80px 0; /* Большие отступы сверху и снизу у каждой секции */
+}
+
+/* 15. Стили для заголовка секции */
+.section-title {
+    text-align: center; /* Центрируем заголовок */
+    font-size: 36px;
+    margin-bottom: 60px; /* Большой отступ снизу, перед карточками */
+    color: #2c2c2c;
+}
+
+/* 16. Стили для сетки карточек (3 в ряд) */
+.features-grid {
+    display: grid; /* Включаем CSS Grid */
+    grid-template-columns: repeat(3, 1fr); /* Создаём 3 колонки одинаковой ширины */
+    gap: 30px; /* Расстояние между карточками */
+}
+
+/* 17. Стили для одной карточки преимущества */
+.feature-card {
+    background-color: #ffffff; /* Белый фон карточки */
+    padding: 40px 25px; /* Внутренние отступы */
+    border-radius: 15px; /* Закруглённые углы карточки */
+    text-align: center; /* Центрируем текст внутри */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Лёгкая тень для эффекта "приподнятости" */
+    transition: transform 0.3s ease; /* Плавный эффект приподнимания */
+}
+
+/* 18. Стили для заголовка внутри карточки */
+.feature-card h3 {
+    color: #c17a4a; /* Акцентный цвет */
+    margin-bottom: 15px; /* Отступ снизу */
+    font-size: 24px;
+}
+
+/* 19. Эффект при наведении на карточку */
+.feature-card:hover {
+    transform: translateY(-10px); /* При наведении карточка "приподнимается" */
+}
+/* Стили для страницы контактов */
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contact-card {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-card h3 {
+    color: #c17a4a;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.contact-card p {
+    color: #2c2c2c;
+    font-size: 18px;
+}
+/* Стили для страницы "О нас" */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40PX;
+}
+
+.about-card {
+    background-color: #ffffff;
+    padding: 30px 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+}
+
+.about-card h3 {
+    color: #c17a4a;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.about-card p {
+    color: #2c2c2c;
+    line-height: 1.5;
+}
+/* 20. Адаптивность для планшетов и телефонов */
+@media (max-width: 768px) {
+    /* Это правило сработает ТОЛЬКО если ширина окна браузера 768px или меньше */
+
+    /* Уменьшаем отступы у секций на мобильных */
+    section {
+        padding: 50px 0;
+    }
+
+    /* Меняем шапку: лого и меню теперь друг под другом */
+    .header .container {
+        flex-direction: column; /* Меняем направление Flexbox с горизонтального на вертикальное */
+        gap: 20px; /* Добавляем расстояние между лого и меню */
+    }
+
+    /* Меню на мобильных: ссылки тоже вертикально */
+    .nav-list {
+        flex-direction: column; /* Ссылки в столбик */
+        align-items: center; /* Центрируем их */
+        gap: 15px;
+    }
+
+    /* Уменьшаем размер заголовка в герое */
+    .hero-title {
+        font-size: 36px;
+    }
+
+    /* Уменьшаем подзаголовок в герое */
+    .hero-subtitle {
+        font-size: 20px;
+    }
+
+    /* На мобильных карточки идут друг под другом (1 колонка) */
+    .features-grid {
+        grid-template-columns: 1fr; /* Вместо 3 колонок — теперь одна */
+    }
+        /* Адаптивность для меню */
+    .menu-grid {
+        grid-template-columns: 1fr; /* Меняем 2 колонки на 1 */
+    }
+
+    .page-title {
+        font-size: 36px; /* Уменьшаем заголовок страницы */
+    }
+    .contacts-grid {
+        grid-template-columns: 1fr;
+    }
+     .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* 21. Стили для подвала */
+.footer {
+    background-color: #2c2c2c; /* Тёмный фон */
+    color: #ffffff; /* Белый текст */
+    text-align: center;
+    padding: 30px 0;
+}
+/* 22. Стили для страницы меню */
+
+.main-menu {
+    padding: 60px 0; /* Отступы сверху и снизу от основной части */
+}
+
+.page-title {
+    text-align: center;
+    font-size: 42px;
+    color: #2c2c2c;
+    margin-bottom: 60px;
+}
+
+
+
+/* 24. Стили для карточки позиции меню */
+.menu-item {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 25. Заголовок и цена в одну строку (Flexbox) */
+.menu-item-header {
+    display: flex;
+    justify-content: space-between; /* Название слева, цена справа */
+    align-items: center; /* Выравниваем по вертикали */
+    margin-bottom: 12px; /* Отступ до описания */
+}
+
+.item-title {
+    font-size: 22px;
+    color: #c17a4a;
+}
+
+.item-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2c2c2c;
+}
+
+.item-description {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Чтобы подвал был внизу даже при коротком контенте */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* минимальная высота = высоте экрана */
+}
+
+.main-menu {
+    flex: 1; /* заставляет основной контент занимать всё свободное место */
+}
+
