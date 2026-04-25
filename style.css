@@ -325,3 +325,14 @@ body {
     flex: 1; /* заставляет основной контент занимать всё свободное место */
 }
 
+.contact-card a {
+color: #c17a4a;
+text-decoration: none;
+border-bottom: 1px dashed #c17a4a;
+transition: all 0.2 ease;
+}
+
+.contact-card a:hover {
+    color: #2c2c2c;
+    border-bottom: #2c2c2c;
+}
