@@ -39,6 +39,7 @@
                             <span class="item-price">150 ₽</span>
                         </div>
                         <p class="item-description">Классический крепкий кофе, сваренный под высоким давлением.</p>
+                        <button class="order-btn" data-name="Эспрессо">Заказать</button>
                     </div>
                     <!-- Вторая позиция -->
                     <div class="menu-item">
@@ -88,3 +89,15 @@
             <p class="copyright">© 2023 Urban Brew. Все права защищены.</p>
         </div>
     </footer>
+    <script>
+    // Находим все кнопки с классом order-btn
+    const buttons = document.querySelectorAll('.order-btn');
+    
+    // Для каждой кнопки вешаем обработчик
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const productName = button.getAttribute('data-name');
+            alert(`Вы добавили в корзину: ${productName}. Спасибо за заказ!`);
+        });
+    });
+</script>
