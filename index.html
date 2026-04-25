@@ -28,7 +28,7 @@
         <div class="container">
             <h2 class="hero-title">Лучший кофе в городе</h2>
             <p class="hero-subtitle">Приходите за кофе, останьтесь за атмосферой</p>
-            <a href="menu.html" class="btn">Посмотреть меню</a>
+            <a href="menu.html" class="btn" id="menuButton">Посмотреть меню</a>
         </div>
     </section>
 
@@ -59,4 +59,21 @@
             <p class="copyright">© 2023 Urban Brew. Все права защищены.</p>
         </div>
     </footer>
-   
+    <script>
+    // Находим кнопку по её id
+    const button = document.getElementById('menuButton');
+
+    // Добавляем обработчик события "клик"
+    button.addEventListener('click', function(event) {
+        // Отменяем стандартное действие (переход по ссылке) на время
+        event.preventDefault();
+        
+        // Показываем всплывающее сообщение
+        alert('Сейчас вы перейдёте на страницу с нашим меню! Приятного аппетита ☕');
+        
+        // Через 1 секунду переходим на страницу меню
+        setTimeout(function() {
+            window.location.href = 'menu.html';
+        }, 1000);
+    });
+</script>
